@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+// ============== Main CSS ==============
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Saira Semi Condensed", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #DEDEDE;
+  @extend .flex-center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.pokeball-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pokeball {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50% ;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid;
+  animation: spin .8s  linear 0s infinite;
+}
+
+.pokeball:after{
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background-color: theme('colors.red.600');
+  border-bottom: 4px solid;
+  top: -4px
+}
+
+.pokeball:before{
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+  border: 4px solid;
+  border-radius: 50%;
+  bottom: 18px;
+  right: 18px;
+  z-index: 1;
+}
+
+.intro-opac {
+  opacity: 0;
+  transition: opacity ease 0.3s;
+  animation: 0.4s intro-opacity ease-in-out 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.intro-opac-30 {
+  opacity: 0;
+  transition: opacity ease 0.3s;
+  animation: 0.4s intro-opacity-30 ease-in-out 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.intro-x {
+  opacity: 0;
+  position: relative;
+  transform: translateX(50px);
+  animation: 0.4s intro-x-animation ease-in-out 0.33333s;
+  animation-fill-mode: forwards;
+}
+.-intro-x {
+  opacity: 0;
+  position: relative;
+  transform: translateX(-50px);
+  animation: 0.4s intro-x-animation ease-in-out 0.33333s;
+  animation-fill-mode: forwards;
+}
+.intro-y {
+  opacity: 0;
+  position: relative;
+  transform: translateY(50px);
+  animation: 0.4s intro-y-animation ease-in-out 0.33333s;
+  animation-fill-mode: forwards;
+}
+.-intro-y {
+  opacity: 0;
+  position: relative;
+  transform: translateY(-50px);
+  animation: 0.4s intro-y-animation ease-in-out 0.33333s;
+  animation-fill-mode: forwards;
+}
+
+.floating-holo-card {
+	transform: translateY(0px);
+	animation: float 6s ease-in-out infinite;
+}
+
+.floating-holo-card:hover {
+  animation-play-state: paused;
+}
+
+@keyframes intro-opacity {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes intro-opacity-30 {
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes intro-x-animation {
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes intro-y-animation {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes spin{
+  0% {
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
