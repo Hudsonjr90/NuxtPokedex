@@ -8,7 +8,7 @@ PokeAPI - https://pokeapi.co/
 
 ## Demo
 
-
+https://nuxt-pokedex-bay.vercel.app
 
 <img width="1428" alt="Screenshot 2023-11-10 at 5 29 46 AM" src="./assets/images/screenshot1.png">
 <img width="1428" alt="Screenshot 2023-11-10 at 5 29 57 AM" src="./assets/images/screenshot2.png">
